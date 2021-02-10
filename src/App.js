@@ -52,7 +52,7 @@ export default class App extends Component {
     localStorage.removeItem("user_id")
     localStorage.removeItem("token")
     setTimeout(() => {
-      window.location.href = "https://bookshelf-frontend2.web.app/"
+      window.location.href = "https://bookshelf-frontend2.firebaseapp.com/"
     }, 700)
   }
 
