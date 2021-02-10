@@ -76,7 +76,7 @@ export default class SignInPage extends Component {
         localStorage.setItem("token", response.token)
         localStorage.setItem("userId", response.user_id)
         this.props.setUser(response.user_id)
-        window.location.href = "https://bookshelf-frontend2.herokuapp.com/"
+        window.location.href = "https://bookshelf-ad7a1.firebaseapp.com/"
       })
       .catch(error => console.log(error))
   }
