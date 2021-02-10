@@ -8,6 +8,29 @@ export default class SearchContainer extends Component {
     books: []
   }
 
+  componentDidMount() {
+    fetch("https://bookshelf-backend2.herokuapp.com/nyt")
+      .then(response => response.json())
+      .then(response => {
+        
+        const books = response.results.books.map(book => {
+          return {
+            title: this.toTitleCase(book.title),
+            authors: book.author,
+            description: book.description,
+            publisher: book.publisher,
+            image_url: book.book_image,
+            buy_url: book.amazon_product_url,
+            isbn10: book.primary_isbn10,
+            isbn13: book.primary_isbn13
+          }
+        })
+
+        this.setState({
+          books: books
+        })
+      })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -26,7 +49,7 @@ export default class SearchContainer extends Component {
       })
     }
 
-    fetch("https://bookshelf-backend2.herokuapp.com/google", request)
+    fetch("https://bookshelf-backend-cha.herokuapp.com/google", request)
       .then(response => response.json())
       .then(response => {
         const books = response.items.map(book => {
