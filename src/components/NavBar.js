@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../logo.png'
 
 export default class NavBar extends Component {
-
+    
   toggleLoginLink = () => {
     if (this.props.user) {
       return (
@@ -18,6 +18,7 @@ export default class NavBar extends Component {
   }
 
   render() {
+      console.log(this.props);
     return (
       <header>
         <Link id="home" to="/">
