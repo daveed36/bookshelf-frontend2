@@ -8,7 +8,29 @@ export default class SearchContainer extends Component {
     books: []
   }
 
-  // s
+  componentDidMount() {
+    fetch("https://bookshelf-backend2.herokuapp.com/google")
+      .then(response => response.json())
+      .then(response => {
+        
+        const books = response.results.books.map(book => {
+          return {
+            title: this.toTitleCase(book.volumeInfo.title),
+              authors: this.authorsArrayToString(book.volumeInfo.authors),
+              description: book.volumeInfo.description,
+              publisher: book.volumeInfo.publisher,
+              image_url: book.volumeInfo.imageLinks.thumbnail,
+              buy_url: book.saleInfo.buyLink,
+              isbn10: book.volumeInfo.industryIdentifiers[0].identifier,
+              isbn13: book.volumeInfo.industryIdentifiers[1].identifier
+          }
+        })
+
+        this.setState({
+          books: books
+        })
+      })
+  }
 
   handleSubmit = (event) => {
     event.preventDefault()

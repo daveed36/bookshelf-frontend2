@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat+Alternates|Taviraj&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat+Alternates|Taviraj&display=swap'); */
 
 .App {
   text-align: center;
@@ -12,10 +12,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #208018;
+  background-color: #12700a;
   font-family: 'Taviraj', serif;
   height: 60px;
-  box-shadow: 0 0 2px black;
+  box-shadow: 0 0 2px rgb(124, 15, 15);
 }
 
 hgroup {
