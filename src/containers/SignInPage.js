@@ -41,6 +41,7 @@ export default class SignInPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    
 
     const request = {
       method: "POST",
@@ -55,7 +56,7 @@ export default class SignInPage extends Component {
       ? this.logInUser(request) 
       : this.createNewUser(request) 
   }
-  
+
   createNewUser = (request) => {
     fetch("https://bookshelf-backend2.herokuapp.com/users", request)
       .then(response => response.json())
