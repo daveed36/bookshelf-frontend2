@@ -52,7 +52,7 @@ export default class App extends Component {
     localStorage.removeItem("user_id")
     localStorage.removeItem("token")
     setTimeout(() => {
-      window.location.href = "https://bookshelf-frondend2.firebaseapp.com/"
+      window.location.href = "https://adoring-noyce-a5dd64.netlify.app/"
     }, 700)
   }
 
