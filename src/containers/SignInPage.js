@@ -74,10 +74,8 @@ export default class SignInPage extends Component {
     fetch("https://bookshelf-backend2.herokuapp.com/login", request)
       .then(response => response.json())
       .then(response => {
-        localStorage.setItem("token", response.token)
-        localStorage.setItem("userId", response.user_id)
         this.props.setUser(response.user_id)
-        window.location.href = "https://adoring-noyce-a5dd64.netlify.app/userpage"
+        window.location.href = "https://adoring-noyce-a5dd64.netlify.app"
       })
       .catch(error => console.log(error))
   }
