@@ -55,6 +55,7 @@ export default class App extends Component {
       window.location.href = "https://adoring-noyce-a5dd64.netlify.app/"
     }, 700)
   }
+  
 
   render() {
     return (
