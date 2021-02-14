@@ -9,10 +9,34 @@ export default class SearchContainer extends Component {
   }
 
   componentDidMount() {
+   fetch("https://bookshelf-backend2.herokuapp.com/nyt")
+     .then(response => response.json())
+     .then(response => {
+
+       const books = response.results.books.map(book => {
+         return {
+           title: this.toTitleCase(book.title),
+           authors: book.author,
+           description: book.description,
+           publisher: book.publisher,
+           image_url: book.book_image,
+           buy_url: book.amazon_product_url,
+           isbn10: book.primary_isbn10,
+           isbn13: book.primary_isbn13
+         }
+       })
+
+       this.setState({
+         books: books
+       })
+     })
+ }
+
+  componentDidMount() {
     fetch("https://bookshelf-backend2.herokuapp.com/login")
       .then(response => response.json())
       .then(response => {
-        
+
         const books = response.results.books.map(book => {
           return {
             title: this.toTitleCase(book.volumeInfo.title),
@@ -69,7 +93,7 @@ export default class SearchContainer extends Component {
             return null
           }
         })
-          
+
         this.setState({
           books: books.filter(book => book)
         })
@@ -79,7 +103,7 @@ export default class SearchContainer extends Component {
 
   bookDataIsValid = (book) => {
     const keys = [
-      book.volumeInfo.title, 
+      book.volumeInfo.title,
       book.volumeInfo.authors,
       book.volumeInfo.description,
       book.volumeInfo.publisher,
