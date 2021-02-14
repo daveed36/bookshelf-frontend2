@@ -10,7 +10,8 @@ const ContactPage = () => {
       <main>
         <div className="contact">
           <p>
-            Developed by Maher Brikae.<br/>
+            Developed by
+            <a href="https://maherbrikae.com">Maher Brikae</a><br/>
             <a href="https://github.com/daveed36">GitHub</a><br/>
             <a href="https://www.linkedin.com/in/maher-brikae/">LinkedIn</a>
           </p>
