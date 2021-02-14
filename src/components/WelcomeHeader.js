@@ -19,7 +19,6 @@ export default class WelcomeHeader extends Component {
         <div className="welcome-description">
           <h2>Welcome</h2>
           <p>With BookShelf, you can find your favorite books, save them to collections, set reading goals, and track your progress.
-            and if you like the book you can simply BUY IT!!
           </p>
         </div>
         {this.toggleSignUpLink()}

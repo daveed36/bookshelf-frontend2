@@ -8,7 +8,7 @@ export default class BookDetails extends Component {
   }
 
   moveBookToCollection = () => {
-    
+
     this.setState({
       showCollectionMenu: false
     })
@@ -35,15 +35,15 @@ export default class BookDetails extends Component {
       })
     }
 
-    fetch(`https://bookshelf-backend2.herokuapp.com/${path}`, request)
-    
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/${path}`, request)
+
     if (this.props.isInCollections) {
       this.closeDetailsAndReload()
     }
   }
 
   deleteBook = () => {
-    
+
     const request = {
       method: "DELETE",
       headers: {
@@ -52,7 +52,7 @@ export default class BookDetails extends Component {
       }
     }
 
-    fetch(`https://bookshelf-backend2.herokuapp.com/books/${this.props.id}`, request)
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/books/${this.props.id}`, request)
 
     this.closeDetailsAndReload()
   }

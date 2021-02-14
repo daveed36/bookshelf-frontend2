@@ -8,8 +8,8 @@ export default class NavBar extends Component {
     if (this.props.user) {
       return (
         <>
-          // <Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >{this.props.user.username}</Link>
-          // <div className="nav-link logout" onClick={this.props.logOut}>Logout</div>
+          <Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >{this.props.user.username}</Link>
+          <div className="nav-link logout" onClick={this.props.logOut}>Logout</div>
         </>
       )
     } else {
@@ -18,7 +18,6 @@ export default class NavBar extends Component {
   }
 
   render() {
-      console.log(this.props);
     return (
       <header>
         <Link id="home" to="/">

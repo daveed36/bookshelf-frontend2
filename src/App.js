@@ -9,7 +9,7 @@ import SignInPage from './containers/SignInPage'
 import UserPage from './containers/UserPage'
 
 export default class App extends Component {
-  
+
   state = {
     user: null
   }
@@ -31,7 +31,7 @@ export default class App extends Component {
       }
     }
 
-    fetch(`https://bookshelf-backend2.herokuapp.com/users/${userId}`, request)
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/users/${userId}`, request)
       .then(response => response.json())
       .then(response => {
         if (!response.error) {
@@ -52,10 +52,9 @@ export default class App extends Component {
     localStorage.removeItem("user_id")
     localStorage.removeItem("token")
     setTimeout(() => {
-      window.location.href = "https://adoring-noyce-a5dd64.netlify.app/"
+      window.location.href = "https://bookshelf-frontend2.netlify.app/"
     }, 700)
   }
-  
 
   render() {
     return (
@@ -65,8 +64,8 @@ export default class App extends Component {
           <Route exact path="/" render={() => <HomePage user={this.state.user} />} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/contact" component={ContactPage} />
-          <Route 
-            exact path="/signin" 
+          <Route
+            exact path="/signin"
             render={(props) => <SignInPage setUser={this.setUser} {...props} />} />
           <Route exact path="/users/:username" render={() => <UserPage user={this.state.user} setUser={this.setUser} />} />
         </div>
