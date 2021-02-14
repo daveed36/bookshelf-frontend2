@@ -73,7 +73,7 @@ export default class SearchContainer extends Component {
       })
     }
 
-    fetch("https://bookshelf-backend-cha.herokuapp.com/google", request)
+    fetch("https://bookshelf-backend2.herokuapp.com/google", request)
       .then(response => response.json())
       .then(response => {
         const books = response.items.map(book => {
