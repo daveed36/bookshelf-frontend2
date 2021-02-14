@@ -4,7 +4,7 @@ export default class CollectionsList extends Component {
 
   makeCollectionsList = () => {
     let active
-    return this.props.user.collections.map(collection => {
+    return this.props.collections.map(collection => {
       active = this.props.activeCollection === collection.name ? "active" : ""
       return (
         <div key={collection.name} className={`collection-header ${active}`} onClick={this.props.handleClick}>
@@ -17,7 +17,7 @@ export default class CollectionsList extends Component {
   render() {
     return (
       <div className="collections-list">
-        {this.props.user ? this.makeCollectionsList() : ""}
+        {this.makeCollectionsList() : ""}
       </div>
     )
   }
