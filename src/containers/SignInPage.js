@@ -41,7 +41,7 @@ export default class SignInPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    
+
 
     const request = {
       method: "POST",
@@ -52,9 +52,9 @@ export default class SignInPage extends Component {
       body: JSON.stringify(this.state)
     }
 
-    this.props.location.existingUser 
-      ? this.logInUser(request) 
-      : this.createNewUser(request) 
+    this.props.location.existingUser
+      ? this.logInUser(request)
+      : this.createNewUser(request)
   }
 
   createNewUser = (request) => {
@@ -77,7 +77,7 @@ export default class SignInPage extends Component {
         localStorage.setItem("token", response.token)
         localStorage.setItem("userId", response.user_id)
         this.props.setUser(response.user_id)
-        window.location.href = "https://adoring-noyce-a5dd64.netlify.app"
+        window.location.href = "https://bookshelf-frontend2.netlify.app/"
       })
       .catch(error => console.log(error))
   }
