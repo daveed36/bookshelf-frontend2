@@ -24,7 +24,7 @@ export default class SearchBar extends Component {
       <div className="search-bar">
         <h3>Find a Book:</h3>
         <form className="search-form" onSubmit={this.handleSubmitAndClearForm}>
-          <input id="query" type="text" name="query" value={this.state.query} onChange={this.handleChange} placeholder="The Great Gatsby, Karl Marx, World War II..." />
+          <input id="query" type="text" name="query" value={this.state.query} onChange={this.handleChange} placeholder="Whatever book you like..." />
           <label>by: </label>
           <select name="by">
             <option value="all" >All</option>
