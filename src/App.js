@@ -11,7 +11,7 @@ import UserPage from './containers/UserPage'
 export default class App extends Component {
 
   state = {
-    user: null
+    user: ''
   }
 
   componentDidMount() {
@@ -39,6 +39,7 @@ export default class App extends Component {
             user: {
               ...response.data.attributes,
               id: response.data.id
+              
             }
           })
         } else {
