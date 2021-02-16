@@ -13,7 +13,7 @@ const ContactPage = () => {
             Developed by
 
             <a href="https://maherbrikae.com">Maher Brikae</a><br/>
-            <a href="https://www.maherbrikae.com">WWW.MAHERBRIKAE.COM</a>
+            <a href="https://www.maherbrikae.com">WWW.MAHERBRIKAE.COM</a><br/>
             <a href="https://github.com/daveed36">GitHub</a><br/>
             <a href="https://www.linkedin.com/in/maher-brikae/">LinkedIn</a>
           </p>
