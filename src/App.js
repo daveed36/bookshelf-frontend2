@@ -31,12 +31,12 @@ export default class App extends Component {
       }
     }
 
-    fetch(`https://bookshelf-backend2.herokuapp.com/users/${userId}`, request)
+    fetch(`http://localhost:3000/users/${userId}`, request)
       .then(response => response.json())
       .then(response => {
         if (!response.error) {
           this.setState({
-            user: {
+            User: {
               ...response.data.attributes,
               id: response.data.id
             }
@@ -52,7 +52,7 @@ export default class App extends Component {
     localStorage.removeItem("user_id")
     localStorage.removeItem("token")
     setTimeout(() => {
-      window.location.href = "https://bookshelf-frontend2.netlify.app/"
+      window.location.href = "http://localhost:3001/"
     }, 700)
   }
 
