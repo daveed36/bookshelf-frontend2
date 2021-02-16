@@ -9,7 +9,7 @@ export default class SearchContainer extends Component {
   }
 
   componentDidMount() {
-   fetch("http://localhost:3000/nyt")
+   fetch("https://bookshelf-backend2.herokuapp.com/nyt")
      .then(response => response.json())
      .then(response => {
 
