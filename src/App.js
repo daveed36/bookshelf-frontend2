@@ -31,12 +31,12 @@ export default class App extends Component {
       }
     }
 
-    fetch(`https://bookshelf-backend2.herokuapp.com/users/${userId}`, request)
+    fetch(`https://bookshelf-backend2.herokuapp.com/users/${userId}`)
       .then(response => response.json())
       .then(response => {
         if (!response.error) {
           this.setState({
-            User: {
+            user: {
               ...response.data.attributes,
               id: response.data.id
             }
