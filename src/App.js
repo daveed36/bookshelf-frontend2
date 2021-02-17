@@ -39,7 +39,7 @@ export default class App extends Component {
             user: {
               ...response.data.attributes,
               id: response.data.id
-              
+
             }
           })
         } else {
